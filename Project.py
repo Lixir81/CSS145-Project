@@ -248,7 +248,11 @@ It is visually presented that the more hours students put into their studies the
 elif st.session_state.page_selection == "data_cleaning":
     st.header("🧼 Data Cleaning and Data Pre-processing")
 
-    st.code(info)
+    buffer = StringIO()
+    df.info(buf=buffer)
+    info = buffer.getvalue()
+    st.text("DataFrame Info:")
+    st.text(info)
 
 
     st.write(""" We use df.info in ordet to look for null values""")
