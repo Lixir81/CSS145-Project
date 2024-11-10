@@ -84,7 +84,9 @@ with st.sidebar:
 # Data
 
 # Load data
-df = pd.read_csv(r'C:\Users\PC-User\Code\Python\Project\StudentPerformanceFactors.csv')
+url = 'https://raw.githubusercontent.com/Lixir81/CSS145-Project/refs/heads/main/StudentPerformanceFactors.csv'
+df = pd.read_csv(url)
+
 
 #######################
 
