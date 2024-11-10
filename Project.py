@@ -66,7 +66,7 @@ with st.sidebar:
 # Data
 
 # Load data
-df = pd.read_csv(r'C:\Users\PC-User\Code\Python\Project\StudentPerformanceFactors.csv')
+dataset = pd.read_csv("data/StudentPerformanceFactors.csv")
 
 #######################
 
