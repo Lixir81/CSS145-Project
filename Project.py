@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import altair as alt
 import plotly.express as px
-import io
+from io import StringIO
 
 from PIL import Image
 
@@ -248,10 +248,8 @@ It is visually presented that the more hours students put into their studies the
 elif st.session_state.page_selection == "data_cleaning":
     st.header("🧼 Data Cleaning and Data Pre-processing")
 
-    buffer = io.StringIO()
-    df.info(buf=buffer)
-    info_str = buffer.getvalue()
-    st.text(info_str)
+    st.code(info)
+
 
     st.write(""" We use df.info in ordet to look for null values""")
 
