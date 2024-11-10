@@ -78,7 +78,7 @@ with st.sidebar:
 
 # Load data
 url = https://raw.githubusercontent.com/Lixir81/CSS145-Project/refs/heads/main/StudentPerformanceFactors.csv
-df=read.csv(url)
+df= pd.read_csv(url)
 average_scores = df.groupby('Hours_Studied')['Exam_Score'].mean()
 
 #######################
