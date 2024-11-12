@@ -226,25 +226,20 @@ elif st.session_state.page_selection == "eda":
     a = df[['Hours_Studied']]
     b = df['Exam_Score']
     
-
-
     a_train, a_test, b_train, b_test = train_test_split(a, b, test_size=0.2, random_state=42)
-
-
     model = LinearRegression()
     model.fit(a_train, b_train)
-
-
     b_pred = model.predict(a_test)
-
-
     mse = mean_squared_error(b_test, b_pred)
     r2 = r2_score(b_test, b_pred)
-
     plt.figure(figsize=(15, 5))
-
     plt.scatter(a_test, b_pred, color='green', marker='x', label='Test predictions')
-
+    plt.xlabel('Hours Studied')
+    plt.ylabel('Exam Score')
+    plt.title('Linear Regression: Hours Studied vs Exam Score')
+    plt.legend()
+    st.pyplot(plt)
+    plt.clf()
     
     st.header("💡Discussion")
     st.subheader("Average Exam Score by Hours Studied")
